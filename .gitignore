@@ -21,3 +21,15 @@ gradle-app.setting
 .classpath
 # IntelliJ
 .idea
+
+../.DS_Store
+.DS_Store
+app/.DS_Store
+app/src/.DS_Store
+app/src/test/.DS_Store
+app/src/test/java/.DS_Store
+app/src/test/java/org/.DS_Store
+app/src/test/java/org/serverest/.DS_Store
+app/src/test/java/org/serverest/controller/.DS_Store
+app/src/test/java/org/serverest/test/.DS_Store
+app/src/test/java/org/serverest/util/.DS_Store
