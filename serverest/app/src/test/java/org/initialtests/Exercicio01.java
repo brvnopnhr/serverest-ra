@@ -57,7 +57,7 @@ public class Exercicio01 {
                 .post("/usuarios")
         .then()
                 .statusCode(HttpStatus.SC_BAD_REQUEST)
-                .body("message", is("Este email j· est· sendo usado"));
+                .body("message", is("Este email j√° est√° sendo usado"));
 
         //C - Listar detalhes do usuario
         given()
@@ -79,6 +79,6 @@ public class Exercicio01 {
                 .delete("/usuarios/{_id}")
         .then()
                 .statusCode(HttpStatus.SC_OK)
-                .body("message", is("Registro excluÌdo com sucesso"));
+                .body("message", is("Registro exclu√≠do com sucesso"));
     }
 }

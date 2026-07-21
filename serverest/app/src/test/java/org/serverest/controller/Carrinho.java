@@ -8,8 +8,8 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.CoreMatchers.is;
 
 public class Carrinho {
-    public static void cadastrar(ProdutoDTO produtoDTO, Integer quantidade, UsuarioDTO usuarioDTO, Integer statusCode, String mensagem, String ambiente) {
-        given()
+    public static String cadastrar(ProdutoDTO produtoDTO, Integer quantidade, UsuarioDTO usuarioDTO, Integer statusCode, String mensagem, String ambiente) {
+        return given()
                 .header("authorization", usuarioDTO.getToken())
                 .body("{\n" +
                         "  \"produtos\": [\n" +
@@ -20,11 +20,12 @@ public class Carrinho {
                         "  ]\n" +
                         "}")
                 .contentType(ContentType.JSON)
-        .when()
+                .when()
                 .post(ambiente.concat(Endpoint.carrinhos))
-        .then()
+                .then()
                 .statusCode(statusCode)
-                .body("message", is(mensagem));
+                .body("message", is(mensagem))
+                .extract().path("_id");
     }
 
     public static void cancelarCompra(UsuarioDTO usuarioDTO, Integer statusCode, String mensagem, String ambiente) {
@@ -33,6 +34,16 @@ public class Carrinho {
         .when()
                 .delete(ambiente.concat(Endpoint.cancelarCompra))
         .then()
+                .statusCode(statusCode)
+                .body("message", is(mensagem));
+    }
+
+    public static void concluirCompra(UsuarioDTO usuarioDTO, Integer statusCode, String mensagem, String ambiente) {
+        given()
+                .header("authorization", usuarioDTO.getToken())
+                .when()
+                .delete(ambiente.concat(Endpoint.concluirCompra))
+                .then()
                 .statusCode(statusCode)
                 .body("message", is(mensagem));
     }

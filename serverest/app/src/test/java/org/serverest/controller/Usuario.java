@@ -89,4 +89,15 @@ public class Usuario {
                 .extract().path("authorization"));
         return usuarioDTO;
     }
+
+    public static void excluirComCarrinhoAssociado(UsuarioDTO usuarioDTO, Integer statusCode, String mensagem, String idCarrinho, String ambiente) {
+        given()
+                .pathParam("_id", usuarioDTO.getId())
+                .when()
+                .delete(ambiente.concat(Endpoint.usuariosId))
+                .then()
+                .statusCode(statusCode)
+                .body("message", is(mensagem))
+                .body("idCarrinho", is(idCarrinho));
+    }
 }

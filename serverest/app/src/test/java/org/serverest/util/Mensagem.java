@@ -3,9 +3,10 @@ package org.serverest.util;
 public class Mensagem {
     public static final String cadastroSucesso = "Cadastro realizado com sucesso";
     public static final String edicaoSucesso = "Registro alterado com sucesso";
-    public static final String exclusaoSucesso = "Registro excluÌdo com sucesso";
-    public static final String emailUtilizado = "Este email j· est· sendo usado";
-    public static final String nenhumRegistroExcluido = "Nenhum registro excluÌdo";
+    public static final String exclusaoSucesso = "Registro exclu√≠do com sucesso";
+    public static final String emailUtilizado = "Este email j√° est√° sendo usado";
+    public static final String nenhumRegistroExcluido = "Nenhum registro exclu√≠do";
     public static final String loginSucesso = "Login realizado com sucesso";
-    public static final String cancelamentoCompraSucesso = "Registro excluÌdo com sucesso. Estoque dos produtos reabastecido";
+    public static final String cancelamentoCompraSucesso = "Registro exclu√≠do com sucesso. Estoque dos produtos reabastecido";
+    public static final String usuarioComCarrinhoNaoExcluido = "N√£o √© permitido excluir usu√°rio com carrinho cadastrado";
 }
